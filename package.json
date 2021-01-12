@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "browserslist": "^4.16.1"
+    "browserslist": "^4.16.1",
+    "normalize.css": "^8.0.1"
   }
 }
