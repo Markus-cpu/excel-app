@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require("copy-webpack-plugin")
+const CopyPlugin = require('copy-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
@@ -14,7 +14,8 @@ const jsLoaders = () => {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties']
       }
     }
   ]
@@ -53,14 +54,14 @@ module.exports = {
               collapseWhitespace: isProd
             }
         }),
-        new CopyPlugin({
-            patterns: [
+        new CopyPlugin(
+            [
               { 
                from: path.resolve(__dirname, 'src/favicon.ico'), 
                to: path.resolve(__dirname, 'dist') 
               }  
             ] 
-        }),
+        ),
         new MiniCssExtractPlugin({
             filename: filename('css')
         })
@@ -71,7 +72,7 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loaders: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: isDev,
               reloadAll: true
