@@ -5,6 +5,17 @@
         "browser": true,
         "node": true
     },
-    "rules": {},
+    "rules": {
+        "object-curly-spacing": "off",
+        "linebreak-style": "off",
+        "semi": "off",
+        "arrow-parens": "off",
+        "indent": "off",
+        "no-trailing-spaces": "off",
+        "require-jsdoc": "off",
+        "eol-last": "off",
+        "comma-dangle": "off",
+        "operator-linebreak": "off"
+    },
     "extends": ["eslint:recommended", "google"]
 }
