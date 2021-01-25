@@ -6,10 +6,15 @@ export class Table extends ExcelComponent {
     constructor($root) {
         super($root, {
             name: 'Table',
-            listeners: []
+            listeners: ['mousedown']
         })
     }
     toHTML() {
         return createTable(50)
+    }
+    onMousedown(event) {
+        if (event.target.dataset.resize === 'col') {
+            console.log('Start resizing: ', event.target.dataset.resize)
+        }
     }
 }
