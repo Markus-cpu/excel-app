@@ -11,7 +11,7 @@ function toCell() {
 
 function createCol(el) {
     return `
-       <div class="column">
+       <div class="column" data-type="resize">
            ${el}
            <div class="col-resize" data-resize="col"></div>
        </div>
@@ -23,7 +23,7 @@ function createRow(index, content) {
     ? '<div class="row-resize" data-resize="row"></div>' 
     : ''
     return `
-        <div class="row">
+        <div class="row" data-type="row-resize">
             <div class="row-info">${index ? index : ''} ${resize}</div>
             <div class="row-data">${content}</div>
         </div>

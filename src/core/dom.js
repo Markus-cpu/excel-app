@@ -38,6 +38,16 @@ class Dom {
         this.html('')
         return this
     }
+    
+    closest(selector) {
+        // чтобы иметь доступ к дом -элементу
+        return $(this.$el.closest(selector))
+    }
+
+    getCoords() {
+        // чтобы получить координаты
+        return this.$el.getBoundingClientRect()
+    }
 }
 
 export function $(selector) {
