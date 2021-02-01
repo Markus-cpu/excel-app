@@ -38,6 +38,10 @@ class Dom {
         this.html('')
         return this
     }
+
+    get data() {
+        return this.$el.dataset
+    }
     
     closest(selector) {
         // чтобы иметь доступ к дом -элементу
@@ -47,6 +51,9 @@ class Dom {
     getCoords() {
         // чтобы получить координаты
         return this.$el.getBoundingClientRect()
+    }
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
     }
 }
 
